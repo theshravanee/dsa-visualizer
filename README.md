@@ -1,16 +1,36 @@
-# React + Vite
+# DSA Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive platform to visualize data structures and algorithms step‑by‑step. Built with React, Vite, and Tailwind CSS, it lets you explore how algorithms work through dynamic simulations and an intuitive interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Interactive visualizations** – See algorithms in action with animated pointers and data structures.
+- **Step‑by‑step execution** – Move forward/backward through algorithm steps.
+- **Resizable panels** – Customize the layout to suit your needs.
+- **Dark / light theme** – Adapts to your system preference.
+- **Modular architecture** – Easily add new algorithms.
+- **Mobile‑friendly** – Responsive design works on phones and tablets.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** – UI library
+- **Vite** – Build tool and development server
+- **Tailwind CSS** – Styling
+- **React Router** – Navigation
+- **React Syntax Highlighter** – Code display
+- **React Resizable Panels** – Split‑pane layout
+- **React Zoom Pan Pinch** – Canvas zoom and pan
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js (v16 or later)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/theshravanee/dsa-visualizer.git
+   cd dsa-visualizer
