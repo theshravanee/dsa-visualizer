@@ -1,36 +1,48 @@
 # DSA Visualizer
 
-An interactive platform to visualize data structures and algorithms step‑by‑step. Built with React, Vite, and Tailwind CSS, it lets you explore how algorithms work through dynamic simulations and an intuitive interface.
+Interactive step‑by‑step visualizations for data structures and algorithms.  
+Built with React, Vite, and Tailwind CSS.
 
 ## Features
 
-- **Interactive visualizations** – See algorithms in action with animated pointers and data structures.
-- **Step‑by‑step execution** – Move forward/backward through algorithm steps.
-- **Resizable panels** – Customize the layout to suit your needs.
-- **Dark / light theme** – Adapts to your system preference.
-- **Modular architecture** – Easily add new algorithms.
-- **Mobile‑friendly** – Responsive design works on phones and tablets.
+- Dynamic algorithm simulations with live code highlighting
+- Resizable panels, dark/light theme, and responsive design
+- Modular architecture – easy to add new algorithms
 
 ## Tech Stack
 
-- **React** – UI library
-- **Vite** – Build tool and development server
-- **Tailwind CSS** – Styling
-- **React Router** – Navigation
-- **React Syntax Highlighter** – Code display
-- **React Resizable Panels** – Split‑pane layout
-- **React Zoom Pan Pinch** – Canvas zoom and pan
+React, Vite, Tailwind CSS, React Router, react‑resizable‑panels, react‑zoom‑pan‑pinch
 
-## Getting Started
 
-### Prerequisites
+## Available Algorithms
 
-- Node.js (v16 or later)
-- npm or yarn
+| Category          | Algorithms                                   |
+|-------------------|----------------------------------------------|
+| Sorting           | Quick Sort, Merge Sort                       |
+| Dynamic Prog.     | Perfect Squares, Longest Increasing Subsequence |
+| Linked List       | Cycle Detection II, Palindrome Linked List    |
+| Recursion         | Subsequences, Permutations, Subsets           |
+| Other             | Dutch National Flag                           |
 
-### Installation
+More algorithms are being added regularly.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/theshravanee/dsa-visualizer.git
-   cd dsa-visualizer
+
+##Project Structure
+
+src/
+├── algorithms/         # Algorithm simulation engines
+├── components/         # Reusable UI components
+├── hooks/              # Custom React hooks
+├── pages/              # Page components for each algorithm
+├── utils/              # Helper functions
+├── App.jsx             # Main routing
+├── main.jsx            # Entry point
+└── index.css           # Global styles
+
+
+Deploy to Vercel / Netlify with build command `npm run build` and publish directory `dist`.
+
+## License
+
+MIT
+This README is clean, covers essentials, and is easy to scan.
