@@ -26,15 +26,79 @@ React, Vite, Tailwind CSS, React Router, react‑resizable‑panels, react‑zoo
 
 More algorithms are being added regularly.
 
+## DSA Visualizer – Internal Workflow
 
-## Project Structure
-
-
-- **algorithms/**: Each algorithm has a dedicated folder with its simulation logic (e.g., `quickSort/simulate.js`).
-- **components/**: Houses visualizers (`ArrayVisualizer`, `LinkedListVisualizer`, etc.) and layout elements (`Header`, `Sidebar`, `AlgorithmVisualizer`).
-- **hooks/**: Contains reusable hooks like `useSimulation` for managing algorithm steps and autoplay.
-- **pages/**: One file per algorithm route, each rendering the generic `AlgorithmVisualizer` with the corresponding algorithm object.
-- **utils/**: Shared utilities (e.g., `linkedList.js` for node creation and cycle manipulation).
+┌─────────────────┐
+│  User selects   │
+│   algorithm     │
+└────────┬────────┘
+         │
+         v
+┌─────────────────┐
+│  Algorithm      │
+│  Visualizer     │
+│  loads with     │
+│  default input  │
+└────────┬────────┘
+         │
+         v
+┌─────────────────┐
+│  User edits     │
+│  input (array,  │
+│  string, etc.)  │
+└────────┬────────┘
+         │
+         v
+┌─────────────────┐
+│  useSimulation  │
+│  calls simulate │
+│  (input)        │
+└────────┬────────┘
+         │
+         v
+┌─────────────────┐
+│  Steps array    │
+│  generated      │
+└────────┬────────┘
+         │
+         v
+┌─────────────────────────────────┐
+│  User interacts:                │
+│  • Prev/Next buttons            │
+│  • Play/Pause                   │
+│  • Scrubber slider              │
+│  • Speed control                │
+└────────┬────────────────────────┘
+         │
+         v
+┌─────────────────────────────────┐
+│  Current step index updates     │
+└────────┬────────────────────────┘
+         │
+         v
+┌─────────────────────────────────┐
+│  Code panel:                    │
+│  Highlight line = current step  │
+└────────┬────────────────────────┘
+         │
+         v
+┌─────────────────────────────────┐
+│  Visualizer component receives  │
+│  step.variables                 │
+└────────┬────────────────────────┘
+         │
+         v
+┌─────────────────────────────────┐
+│  Canvas/display updates to      │
+│  reflect current algorithm      │
+│  state (pointers, arrays, etc.) │
+└────────┬────────────────────────┘
+         │
+         v
+┌─────────────────────────────────┐
+│  If autoplay active → loop to   │
+│  next step                      │
+└─────────────────────────────────┘
 
 
 Deploy to Vercel / Netlify with build command `npm run build` and publish directory `dist`.
@@ -42,4 +106,4 @@ Deploy to Vercel / Netlify with build command `npm run build` and publish direct
 ## License
 
 MIT
-This README is clean, covers essentials, and is easy to scan.
+
