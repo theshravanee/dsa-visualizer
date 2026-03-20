@@ -26,9 +26,7 @@ React, Vite, Tailwind CSS, React Router, react‑resizable‑panels, react‑zoo
 
 More algorithms are being added regularly.
 
-┌─────────────────────────────────────────────────────────────┐
-│                    DSA VISUALIZER WORKFLOW                   │
-└─────────────────────────────────────────────────────────────┘
+## DSA VISUALIZER WORKFLOW  
 
     ┌──────────────┐
     │ User selects │
