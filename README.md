@@ -27,17 +27,14 @@ React, Vite, Tailwind CSS, React Router, react‑resizable‑panels, react‑zoo
 More algorithms are being added regularly.
 
 
-##Project Structure
+## Project Structure
 
-src/
-├── algorithms/         # Algorithm simulation engines
-├── components/         # Reusable UI components
-├── hooks/              # Custom React hooks
-├── pages/              # Page components for each algorithm
-├── utils/              # Helper functions
-├── App.jsx             # Main routing
-├── main.jsx            # Entry point
-└── index.css           # Global styles
+
+- **algorithms/**: Each algorithm has a dedicated folder with its simulation logic (e.g., `quickSort/simulate.js`).
+- **components/**: Houses visualizers (`ArrayVisualizer`, `LinkedListVisualizer`, etc.) and layout elements (`Header`, `Sidebar`, `AlgorithmVisualizer`).
+- **hooks/**: Contains reusable hooks like `useSimulation` for managing algorithm steps and autoplay.
+- **pages/**: One file per algorithm route, each rendering the generic `AlgorithmVisualizer` with the corresponding algorithm object.
+- **utils/**: Shared utilities (e.g., `linkedList.js` for node creation and cycle manipulation).
 
 
 Deploy to Vercel / Netlify with build command `npm run build` and publish directory `dist`.
