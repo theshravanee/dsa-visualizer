@@ -26,80 +26,71 @@ React, Vite, Tailwind CSS, React Router, react‑resizable‑panels, react‑zoo
 
 More algorithms are being added regularly.
 
-## DSA Visualizer – Internal Workflow
+┌─────────────────────────────────────────────────────────────┐
+│                    DSA VISUALIZER WORKFLOW                   │
+└─────────────────────────────────────────────────────────────┘
 
-┌─────────────────┐
-│  User selects   │
-│   algorithm     │
-└────────┬────────┘
-         │
-         v
-┌─────────────────┐
-│  Algorithm      │
-│  Visualizer     │
-│  loads with     │
-│  default input  │
-└────────┬────────┘
-         │
-         v
-┌─────────────────┐
-│  User edits     │
-│  input (array,  │
-│  string, etc.)  │
-└────────┬────────┘
-         │
-         v
-┌─────────────────┐
-│  useSimulation  │
-│  calls simulate │
-│  (input)        │
-└────────┬────────┘
-         │
-         v
-┌─────────────────┐
-│  Steps array    │
-│  generated      │
-└────────┬────────┘
-         │
-         v
-┌─────────────────────────────────┐
-│  User interacts:                │
-│  • Prev/Next buttons            │
-│  • Play/Pause                   │
-│  • Scrubber slider              │
-│  • Speed control                │
-└────────┬────────────────────────┘
-         │
-         v
-┌─────────────────────────────────┐
-│  Current step index updates     │
-└────────┬────────────────────────┘
-         │
-         v
-┌─────────────────────────────────┐
-│  Code panel:                    │
-│  Highlight line = current step  │
-└────────┬────────────────────────┘
-         │
-         v
-┌─────────────────────────────────┐
-│  Visualizer component receives  │
-│  step.variables                 │
-└────────┬────────────────────────┘
-         │
-         v
-┌─────────────────────────────────┐
-│  Canvas/display updates to      │
-│  reflect current algorithm      │
-│  state (pointers, arrays, etc.) │
-└────────┬────────────────────────┘
-         │
-         v
-┌─────────────────────────────────┐
-│  If autoplay active → loop to   │
-│  next step                      │
-└─────────────────────────────────┘
-
+    ┌──────────────┐
+    │ User selects │
+    │  algorithm   │
+    └──────┬───────┘
+           v
+    ┌─────────────────────────────────┐
+    │ AlgorithmVisualizer loads with   │
+    │ default input                    │
+    └────────────────┬─────────────────┘
+           v
+    ┌─────────────────────────────────┐
+    │ User edits input (array/string)  │
+    └────────────────┬─────────────────┘
+           v
+    ┌─────────────────────────────────┐
+    │ useSimulation calls simulate()   │
+    └────────────────┬─────────────────┘
+           v
+    ┌─────────────────────────────────┐
+    │     Steps array generated       │
+    └────────────────┬─────────────────┘
+           v
+    ┌────────────────────────────────────────────────────┐
+    │                 User interacts                      │
+    │  ┌──────────┐  ┌─────────┐  ┌─────────┐  ┌──────┐  │
+    │  │Prev/Next │  │Play/Pause│  │ Scrubber│  │Speed │  │
+    │  │ buttons  │  │         │  │ slider  │  │control│  │
+    │  └────┬─────┘  └────┬────┘  └────┬────┘  └──┬───┘  │
+    └───────┼─────────────┼─────────────┼──────────┼──────┘
+            └─────────────┼─────────────┼──────────┘
+                         v              v
+            ┌─────────────────────────────────────┐
+            │    Current step index updates       │
+            └─────────────────┬───────────────────┘
+                              v
+            ┌─────────────────────────────────────┐
+            │ Code panel highlights current line   │
+            └─────────────────┬───────────────────┘
+                              v
+            ┌─────────────────────────────────────┐
+            │ Visualizer receives step.variables   │
+            └─────────────────┬───────────────────┘
+                              v
+            ┌─────────────────────────────────────┐
+            │ Canvas/display updates to reflect    │
+            │ algorithm state                      │
+            └─────────────────┬───────────────────┘
+                              v
+            ┌─────────────────────────────────────┐
+            │        Autoplay active?              │
+            └─────────┬───────────┬───────────────┘
+                      │Yes        │No
+                      v           v
+        ┌─────────────────┐    ┌─────────────────┐
+        │Loop to next step│    │Wait for user    │
+        └────────┬────────┘    │action           │
+                 │             └────────┬────────┘
+                 └──────────────────────┘
+                           │
+                           v
+              (back to step index update)
 
 Deploy to Vercel / Netlify with build command `npm run build` and publish directory `dist`.
 
